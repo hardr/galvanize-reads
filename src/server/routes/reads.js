@@ -1,9 +1,8 @@
 const router = require('express').Router();
-
-const indexController = require('../controllers/index');
+const knex = require('../db/knex');
 
 router.get('/', function (req, res, next) {
-  res.redirect('/read');
+  res.send('good to go');
 });
 
 module.exports = router;
