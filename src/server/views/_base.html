@@ -9,7 +9,7 @@
     {% if title %}
       <title>{{ title }}</title>
     {% else %}
-      <title>Something. Something. Something.</title>
+      <title>High score.. is that good? Did I break it?</title>
     {% endif %}
     <!-- stylesheets -->
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootswatch/3.3.7/yeti/bootstrap.min.css">
@@ -18,11 +18,13 @@
     {% block css %}{% endblock %}
   </head>
   <body>
+    <h1>{{ title }}</h1>
       {% block content %}
       {% endblock %}
     <script type="text/javascript" src="//code.jquery.com/jquery-2.1.4.min.js"></script>
     <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
     <script type="text/javascript" src="/js/main.js"></script>
+    <script type="text/javascript" src="/js/new_book.js"></script>
     {% block scripts %}{% endblock %}
   </body>
 </html>

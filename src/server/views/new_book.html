@@ -1,0 +1,45 @@
+{% extends "_base.html" %}
+
+{% block css %}
+  <!-- <link rel="stylesheet" href="./path/to/my/styles.css"> -->
+{% endblock %}
+
+{% block title %}{% endblock %}
+
+{% block content %}
+
+<div>
+  <form class="new-book-form" action="/books/new" method="post">
+  <!-- <form class="new-book-form"> -->
+    <label>Title
+      <input type="text" name="title"></input>
+    </label>
+    <label>Genre
+      <input type="text" name="genre"></input>
+    </label>
+    <label>Cover Image URL
+      <input type="url" name="coverUrl"></input>
+    </label>
+    <label>Description
+      <input type="text" name="description"></input>
+    </label>
+    <label>Authors<br>
+      {% for author in authors %}
+      <input type="checkbox" class="book-author" name="bookAuthor" value="{{author.id}}">{{author.first_name}} {{author.last_name}}<br>
+      {% endfor %}
+      <!-- <button class="remove-author">- Author</button>
+      <button class="add-author">+ Author</button> -->
+    </label>
+    <button>Add Book</button>
+  </form>
+
+</div>
+  <!-- <div class="container book">
+    <img src={{book.cover_url}}></img>
+    <h1>{{book.title}}</h1>
+    <h2>{{book.first_name}} {{book.last_name}}</h2>
+    <p>{{book.genre}}</p>
+    <p>{{book.description}}</p>
+  </div> -->
+
+{% endblock %}

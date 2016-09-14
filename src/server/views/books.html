@@ -1,0 +1,21 @@
+{% extends "_base.html" %}
+
+{% block title %}{% endblock %}
+
+{% block content %}
+  <div>
+    <p>{{message}}</p>
+  </div>
+  {% for book in books %}
+  <div class="book {{book.id}}">
+    <img src={{book.cover_url}}></img>
+    <h1>{{book.title}}</h1>
+    <h2>{{book.first_name}} {{book.last_name}}</h2>
+    <p>{{book.genre}}</p>
+    <p>{{book.description}}</p>
+    <button>Edit</button>
+    <button>Delete</button>
+  </div>
+  {% endfor %}
+
+{% endblock %}
